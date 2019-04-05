@@ -1,0 +1,249 @@
+/* General styeles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+*::selection {
+    background: #33257e;#33257e
+    color: #fff;
+}
+
+*-moz-::selection {
+    background: #33257e;
+    color: #fff;
+}
+
+body {
+    background: #212139;
+    color: #fff;
+}
+
+.container {
+    max-width: 500px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+
+/* Logo styles */
+.logo {
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo img {
+    width: 100;
+    vertical-align: top;
+}
+
+
+/* Row & Columns styles */
+.app .row {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app .col {
+    width: 50%;
+}
+
+
+/* General styles for inputs & buttons */
+.app label {
+    line-height: 40px;
+}
+
+.app input {
+    text-align: center;
+    border: none;
+}
+
+.app .btn {
+    width: 100%;
+    background: #684bff;
+    color: #fff;
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.app .btn:hover {
+    background: #b4a5ff;
+}
+
+.app .btn.false {
+    background: #33257e;
+}
+
+
+/* Row: Number characters */
+.app .number-characters .buttons div {
+    width: 100%
+}
+
+.app .number-characters .buttons div:nth-child(1) button {
+    border-radius: 4px 0 0 4px;
+}
+
+.app .number-characters input {
+    height: 40px;
+    width: 100%;
+    cursor: default;
+    background: #33257e;
+    color: #fff;
+}
+
+.app .number-characters .buttons div:nth-child(3) button {
+    border-radius: 0 4px 4px 0;
+}
+
+.app .number-characters .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* Row: Generate password */
+.app .row.generate {
+    margin-bottom: 10px;
+}
+
+.app .row.generate .col:nth-child(1) {
+    width: 30%
+}
+
+.app .row.generate .col:nth-child(2) {
+    width: 65%
+}
+
+.app .row.generate .btn.btn-generate {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 0;
+    line-height: 40px;
+    position: relative; 
+}
+
+.app .row.generate .btn.btn-generate i {
+    margin-left: 20px;
+    position: relative;
+    top: -1px;
+    font-size: 14px;
+}
+
+.app .row.generate .btn.btn-generate:after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #684bff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 13px;
+    right: -7px;
+    transition: all .3s ease;
+}
+
+.app .row.generate .col:nth-child(1):hover .btn.btn-generate:after {
+    background: #b4a5ff
+}
+
+.app .row.generate .input-password {
+    width: 100%;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid rgba(255 , 255, 255, .25);
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.app .row.generate .input-password:hover {
+    border: 1px solid rgba(255 , 255, 255, .5);
+}
+
+.app .row.generate input::selection {
+    background: #212139;
+}
+
+.app .row.generate input::-moz-selection {
+    background: #212139;
+}
+
+/* Row: Alerr */
+.app .row.alert {
+    justify-content: flex-end;
+}
+
+.app .row.alert .col {
+    width: 65%; 
+}
+
+.app .row.alert .alert-copied {
+    text-align: center;
+    color: rgba(255, 255, 255, 0);
+    transition: all .3s ease;
+}
+.app .row.alert .alert-copied.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+.app .row.alert .alert-copied p,
+.app .row.alert .alert-copied i {
+    font-size: 12px;
+}
+
+/* Media query */
+@media screen and (max-width: 500px) {
+    .logo img {
+        width: 70%;
+    }
+
+    .app .row {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .app .row .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .app .row.generate {
+        border-top: 1px solid rgba(255, 255, 255, .25);
+        padding-top: 40px;
+    }
+
+    .app .row.generate .col:nth-child(1),
+    .app .row.generate .col:nth-child(2) {
+        width: 100%;
+    }
+
+    .app .row.generate .btn.btn-generate:after {
+        top: auto;
+        left: 50%;
+        right: 50%;
+        bottom: -7px
+    }
+
+    .app .row.alert .col {
+        width: 100%
+    }
+}
